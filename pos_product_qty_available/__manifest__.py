@@ -28,7 +28,7 @@
         'data/pos_product_qty_available_data.xml',
     ],
     'qweb': [
-        'static/src/xml/pos_product_available_template.xml',
+        'static/src/xml/pos.xml',
     ],
 
     "post_load": None,

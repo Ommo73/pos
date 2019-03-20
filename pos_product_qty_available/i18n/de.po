@@ -1,6 +1,6 @@
 # Translation of Odoo Server.
 # This file contains the translation of the following modules:
-# * pos_product_available
+# * pos_product_qty_available
 # 
 # Translators:
 # Translation Bot <i18n-bot@it-projects.info>, 2017
@@ -19,17 +19,17 @@ msgstr ""
 "Language: de\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#. module: pos_product_available
+#. module: pos_product_qty_available
 #. openerp-web
-#: code:addons/pos_product_available/static/src/xml/pos.xml:15
+#: code:addons/pos_product_qty_available/static/src/xml/pos.xml:15
 #, python-format
 msgid "(of"
 msgstr "(von "
 
-#. module: pos_product_available
+#. module: pos_product_qty_available
 #. openerp-web
-#: code:addons/pos_product_available/static/src/js/test_pos_quantities.js:11
-#: code:addons/pos_product_available/static/src/js/test_pos_quantities.js:68
+#: code:addons/pos_product_qty_available/static/src/js/test_pos_quantities.js:11
+#: code:addons/pos_product_qty_available/static/src/js/test_pos_quantities.js:68
 #, python-format
 msgid ""
 "<p>Click to start the point of sale interface. It <b>runs on tablets</b>, "
@@ -40,31 +40,31 @@ msgstr ""
 "Laptops, oder industrieller Hardware.</p><p>Sobald eine Sitzung gestartet "
 "wurde, funktioniert das System auch ohne Internet-Verbindung.</p>"
 
-#. module: pos_product_available
+#. module: pos_product_qty_available
 #. openerp-web
-#: code:addons/pos_product_available/static/src/js/test_pos_quantities.js:43
+#: code:addons/pos_product_qty_available/static/src/js/test_pos_quantities.js:43
 #, python-format
 msgid "Click the payment method"
 msgstr ""
 
-#. module: pos_product_available
+#. module: pos_product_qty_available
 #. openerp-web
-#: code:addons/pos_product_available/static/src/js/test_pos_quantities.js:61
-#: code:addons/pos_product_available/static/src/js/test_pos_quantities.js:64
+#: code:addons/pos_product_qty_available/static/src/js/test_pos_quantities.js:61
+#: code:addons/pos_product_qty_available/static/src/js/test_pos_quantities.js:64
 #, python-format
 msgid "Close POS"
 msgstr ""
 
-#. module: pos_product_available
+#. module: pos_product_qty_available
 #. openerp-web
-#: code:addons/pos_product_available/static/src/js/test_pos_quantities.js:36
+#: code:addons/pos_product_qty_available/static/src/js/test_pos_quantities.js:36
 #, python-format
 msgid "Open the payment screen"
 msgstr ""
 
-#. module: pos_product_available
+#. module: pos_product_qty_available
 #. openerp-web
-#: code:addons/pos_product_available/static/src/js/test_pos_quantities.js:83
+#: code:addons/pos_product_qty_available/static/src/js/test_pos_quantities.js:83
 #, python-format
 msgid "Ready to launch your <b>point of sale</b>? <i>Click here</i>."
 msgstr ""

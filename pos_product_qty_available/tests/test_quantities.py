@@ -15,7 +15,10 @@ class TestUi(odoo.tests.HttpCase):
         # that are returned by the backend in module_boot. Without
         # this you end up with js, css but no qweb.
         env = self.env
-        env['ir.module.module'].search([('name', '=', 'pos_product_qty_available')], limit=1).state = 'installed'
+        env['ir.module.module'].search([('name',
+                                         '=',
+                                         'pos_product_qty_available')],
+                                       limit=1).state = 'installed'
 
         env['product.template'].search([('name', '=', 'LED Lamp')]).write({
             'type': 'product',
@@ -23,6 +26,8 @@ class TestUi(odoo.tests.HttpCase):
 
         # without a delay there might be problems caused by a not yet loaded button's action
         self.phantom_js("/web",
-                        "odoo.__DEBUG__.services['web_tour.tour'].run('tour_pos_product_qty_available', 500)",
-                        "odoo.__DEBUG__.services['web_tour.tour'].tours.tour_pos_product_qty_available.ready",
+                        "odoo.__DEBUG__.services['web_tour.tour']."
+                        "run('tour_pos_product_qty_available', 500)",
+                        "odoo.__DEBUG__.services['web_tour.tour']."
+                        "tours.tour_pos_product_qty_available.ready",
                         login="admin", timeout=200)
