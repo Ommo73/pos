@@ -7,11 +7,11 @@ odoo.define('pos_product_qty_available.tour', function (require) {
     var core = require('web.core');
     var _t = core._t;
 
-    function open_pos_neworder() {
+    function open_pos_neworder () {
         return [{
             trigger: ".o_pos_kanban button.oe_kanban_action_button",
-            content: _t("<p>Click to start the point of sale interface. It <b>runs on tablets</b>, laptops, or industrial hardware.</p><p>Once the session launched, the system continues to run without an internet connection.</p>"),
-            position: "bottom"
+            content: _t("Click to start the point of sale interface"),
+            position: "bottom",
         }, {
             content: "Switch to table or make dummy action",
             trigger: '.table, .order-button.selected',
@@ -23,7 +23,7 @@ odoo.define('pos_product_qty_available.tour', function (require) {
         }];
     }
 
-    function add_product_to_order(product_name) {
+    function add_product_to_order (product_name) {
         return [{
             content: 'buy ' + product_name,
             trigger: '.product-list .product-name:contains("' + product_name + '")',
@@ -33,12 +33,12 @@ odoo.define('pos_product_qty_available.tour', function (require) {
         }];
     }
 
-    function payment(pay_method) {
+    function payment (pay_method) {
         return [{
             trigger: '.button.pay',
             content: _t("Open the payment screen"),
         }, {
-            content: "Choose Administrator like a cashier or make a dummy action",
+            content: "Choose Administrator like a cashier",
             trigger: '.modal-dialog.cashier:not(.oe_hidden) .cashier .selection-item:contains("Mitchell Admin"), .payment-screen:not(.oe_hidden) h1:contains("Payment")',
         }, {
             extra_trigger: '.button.paymentmethod:contains("' + pay_method +'")',
@@ -58,7 +58,7 @@ odoo.define('pos_product_qty_available.tour', function (require) {
         }];
     }
 
-    function close_pos() {
+    function close_pos () {
         return [{
             trigger: '.header-button:contains("Close")',
             content: _t("Close POS"),
@@ -68,12 +68,12 @@ odoo.define('pos_product_qty_available.tour', function (require) {
         }, {
             extra_trigger: ".o_pos_kanban button.oe_kanban_action_button",
             trigger: '.breadcrumb li.active',
-            content: _t("<p>Click to start the point of sale interface. It <b>runs on tablets</b>, laptops, or industrial hardware.</p><p>Once the session launched, the system continues to run without an internet connection.</p>"),
+            content: _t("Click to start the point of sale interface"),
             position: "bottom",
         }];
     }
 
-    function check_quantity() {
+    function check_quantity () {
         return [{
             content: 'check quantity',
             extra_trigger: '.product-list .product:contains("LED Lamp") .qty-tag.not-available:contains("-1")',
@@ -83,14 +83,14 @@ odoo.define('pos_product_qty_available.tour', function (require) {
 
     var steps = [tour.STEPS.SHOW_APPS_MENU_ITEM, {
         trigger: '.o_app[data-menu-xmlid="point_of_sale.menu_point_root"]',
-        content: _t("Ready to launch your <b>point of sale</b>? <i>Click here</i>."),
+        content: _t("Launch your point of sale"),
         position: 'right',
-        edition: 'community'
+        edition: 'community',
     }, {
         trigger: '.o_app[data-menu-xmlid="point_of_sale.menu_point_root"]',
-        content: _t("Ready to launch your <b>point of sale</b>? <i>Click here</i>."),
+        content: _t("Launch your point of sale"),
         position: 'bottom',
-        edition: 'enterprise'
+        edition: 'enterprise',
     }];
     steps = steps.concat(open_pos_neworder());
     steps = steps.concat(add_product_to_order('LED Lamp'));
@@ -99,6 +99,6 @@ odoo.define('pos_product_qty_available.tour', function (require) {
     steps = steps.concat(open_pos_neworder());
     steps = steps.concat(check_quantity());
 
-    tour.register('tour_pos_product_qty_available', { test: true, url: '/web' }, steps);
+    tour.register('tour_pos_product_qty_available', {test: true, url: '/web'}, steps);
 
 });
