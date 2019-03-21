@@ -7,35 +7,22 @@
     "name": """Available quantity of products in POS""",
     "summary": """Adds available quantity at products in POS""",
     "category": "Point Of Sale",
-    # "live_test_url": "http://apps.it-projects.info/shop/product/DEMO-URL?version={ODOO_BRANCH}",
     "images": [],
     "version": "12.0.1.0.0",
     "application": False,
-
-    "author": "IT-Projects LLC, Ivan Yelizariev, " "Odoo Community Association (OCA)",
+    "author": "IT-Projects LLC, Ivan Yelizariev, Odoo Community Association (OCA)",
     "support": "pos@it-projects.info",
     "website": "https://github.com/OCA/pos",
     "license": "LGPL-3",
-    # "price": 9.00,
-    # "currency": "EUR",
-
     "depends": [
         'point_of_sale',
-        'stock',
     ],
-    "external_dependencies": {"python": [], "bin": []},
     'data': [
         'data/pos_product_qty_available_data.xml',
     ],
     'qweb': [
         'static/src/xml/pos.xml',
     ],
-
-    "post_load": None,
-    "pre_init_hook": None,
-    "post_init_hook": None,
-    "uninstall_hook": None,
-
     "auto_install": False,
     "installable": True,
 }
