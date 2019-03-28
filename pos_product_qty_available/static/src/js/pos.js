@@ -43,7 +43,7 @@ odoo.define('pos_product_qty_available.PosModel', function (require) {
                     args: [],
                     fields: ['qty_available', 'type'],
                     domain: [['sale_ok', '=', true],
-                     ['available_in_pos', '=', true]],
+                        ['available_in_pos', '=', true]],
                     context: {'location': self.config.stock_location_id[0]},
                 }).then(function (products) {
                     self.db.product_qtys = products;
@@ -67,7 +67,7 @@ odoo.define('pos_product_qty_available.PosModel', function (require) {
         after_load_server_data: function () {
             var self = this;
             var res = PosModelSuper.after_load_server_data
-            .apply(this, arguments);
+                .apply(this, arguments);
             _.each(this.db.product_qtys, function (v) {
                 _.extend(self.db.get_product_by_id(v.id), v);
             });
@@ -89,7 +89,7 @@ odoo.define('pos_product_qty_available.PosModel', function (require) {
         },
         push_and_invoice_order: function (order) {
             var invoiced = PosModelSuper.push_and_invoice_order
-            .call(this, order);
+                .call(this, order);
 
             if (order && order.get_client() && order.orderlines) {
                 this.update_product_qty_from_order_lines(order);
@@ -103,7 +103,7 @@ odoo.define('pos_product_qty_available.PosModel', function (require) {
     models.Orderline = models.Orderline.extend({
         export_as_JSON: function () {
             var data = OrderlineSuper.prototype.export_as_JSON
-            .apply(this, arguments);
+                .apply(this, arguments);
             data.qty_available = this.product.qty_available;
             return data;
         },
